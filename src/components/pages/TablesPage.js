@@ -1,51 +1,58 @@
 import React, { Component } from 'react';
-import MUIDataTable from "mui-datatables";
+import ReactTable from "react-table";
+import "react-table/react-table.css";
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
 import '../../firebase'
 
-const columns = ["Name", "Company", "City", "State"];
-
-const data = [
-  ["Joe James", "Test Corp", "Yonkers", "NY"],
-  ["John Walsh", "Test Corp", "Hartford", "CT"],
-  ["Bob Herm", "Test Corp", "Tampa", "FL"],
-  ["James Houston", "Test Corp", "Dallas", "TX"],
-];
-
-const options = {
-  filterType: 'dropdown',
-  print: false,
-  download: false,
-  onRowsDelete: deleteFire => (
-    console.log("Lets delete this")
-  )
-};
 
 
-export default class TablesPage extends Component {
 
-  constructor() {
-    super();
-  }
+export default class LockTable extends Component {
+  state = { data: [] };
 
   componentDidMount() {
+    const database = firebase.database().ref("/");
+    database.on("value", snapshot => {
+      const data = [];
 
+      snapshot.forEach(childSnapShot => {
+        const asset = {
+          AssetNumber: childSnapShot.key.toString(),
+          GivenBy: childSnapShot.val().GivenBy,
+          TakenBy: childSnapShot.val().TakenBy
+        };
+
+        data.push(asset);
+      });
+
+      this.setState(prevState => {
+        return { data: [...prevState.data, ...data] };
+      });
+    });
   }
-  render() {
-    const database = firebase.database().ref("Assets");
-    const data1 = [];
 
+  render() {
+    const columns = [
+      {
+        Header: "Asset Number",
+        accessor: "AssetNumber"
+      },
+      {
+        Header: "Given By",
+        accessor: "GivenBy"
+      },
+      {
+        Header: "Taken By",
+        accessor: "TakenBy"
+      },
+
+    ];
 
     return (
       <div>
-        <MUIDataTable
-          title={"Employee List"}
-          data={data}
-          columns={columns}
-          options={options}
-        />
+        <ReactTable data={this.state.data} columns={columns} />
       </div>
     );
   }
