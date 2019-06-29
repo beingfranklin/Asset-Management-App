@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import MUIDataTable from "mui-datatables";
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/database';
+import '../../firebase'
 
 const columns = ["Name", "Company", "City", "State"];
 
@@ -11,19 +15,38 @@ const data = [
 ];
 
 const options = {
-  filterType: 'checkbox',
+  filterType: 'dropdown',
+  print: false,
+  download: false,
+  onRowsDelete: deleteFire => (
+    console.log("Lets delete this")
+  )
 };
 
 
-const TablesPage = () => {
-  return (
-    <MUIDataTable
-      title={"Employee List"}
-      data={data}
-      columns={columns}
-      options={options}
-    />
-  )
-}
+export default class TablesPage extends Component {
 
-export default TablesPage;
+  constructor() {
+    super();
+  }
+
+  componentDidMount() {
+
+  }
+  render() {
+    const database = firebase.database().ref("Assets");
+    const data1 = [];
+
+
+    return (
+      <div>
+        <MUIDataTable
+          title={"Employee List"}
+          data={data}
+          columns={columns}
+          options={options}
+        />
+      </div>
+    );
+  }
+}

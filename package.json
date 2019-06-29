@@ -6,6 +6,7 @@
   "license": "MIT",
   "dependencies": {
     "@material-ui/icons": "^4.2.1",
+    "firebase": "^6.2.4",
     "google-map-react": "^1.0.6",
     "mdbreact": "^4.9.0",
     "mui-datatables": "^2.5.1",
