@@ -10,11 +10,13 @@ input[type=radio] {
 }
 
 .App__Aside {
+    float:right !important;
     width: 50%;
     background-color: #66DAC7;
 }
 
 .App__Form {
+    float:right !important;
     width: 50%;
     background-color: #2E4158;
     padding: 25px 40px;
@@ -22,7 +24,9 @@ input[type=radio] {
 }
 
 .App__Forms {
-    width: 100%;
+    width: 50%;
+float:right !important;
+margin-left:30%;
     background-color: white;
     color: black;
     padding: 25px 40px;
