@@ -8,10 +8,17 @@ import BreadcrumSection from './sections/BreadcrumSection';
 // import ChartSection2 from './sections/ChartSection2';
 // import MapSection from './sections/MapSection';
 // import ModalSection from './sections/ModalSection';
+import TopNavigation from '../topNavigation';
+import SideNavigation from '../sideNavigation';
 
 const DashboardPage = () => {
   return (
+
+
     <React.Fragment>
+      <TopNavigation />
+      <SideNavigation />
+
       <BreadcrumSection />
       {/* <AdminCardSection1 /> */}
       {/* <ChartSection1 /> */}
@@ -23,6 +30,7 @@ const DashboardPage = () => {
       </MDBRow> */}
       {/* <AdminCardSection2 /> */}
     </React.Fragment>
+
   )
 }
 

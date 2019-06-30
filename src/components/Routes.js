@@ -5,17 +5,25 @@ import DashboardPage from './pages/DashboardPage';
 import TablesPage from './pages/TablesPage';
 // import MapsPage from './pages/MapsPage';
 import NotFoundPage from './pages/NotFoundPage';
+import SignUpForm from './pages/SignUpForm';
+import SignInForm from './pages/SignInForm';
+
+
 
 class Routes extends React.Component {
   render() {
     return (
       <Switch>
-        <Route path='/' exact component={DashboardPage} />
-        <Route path='/dashboard' component={DashboardPage} />
+        <Route path='/' exact component={SignUpForm} />
+        <Route path='/sign-up' component={SignUpForm} />
+        <Route path='/sign-in' component={SignInForm} />
+
+
+        <Route exact path='/dashboard' component={DashboardPage} />
         {/* <Route path='/profile' component={ProfilePage} /> */}
-        <Route path='/tables' component={TablesPage} />
+        <Route exact path='/tables' component={TablesPage} />
         {/* <Route path='/maps' component={MapsPage} /> */}
-        <Route path='/404' component={NotFoundPage} />
+        <Route exact path='/404' component={NotFoundPage} />
       </Switch>
     );
   }

@@ -4,7 +4,9 @@ import "react-table/react-table.css";
 import firebase from 'firebase/app';
 // import 'firebase/auth';
 import 'firebase/database';
-import '../../firebase'
+import '../../firebase';
+import TopNavigation from '../topNavigation';
+import SideNavigation from '../sideNavigation';
 
 
 export default class LockTable extends Component {
@@ -76,7 +78,12 @@ export default class LockTable extends Component {
 
     return (
       <div>
-        <ReactTable data={this.state.data} columns={columns} />
+
+        <TopNavigation />
+        <SideNavigation />
+        <main id="content" className="p-5">
+          <ReactTable data={this.state.data} columns={columns} />
+        </main>
       </div>
     );
   }
