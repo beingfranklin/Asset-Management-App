@@ -21,16 +21,17 @@ class TopNavigation extends Component {
     render() {
         return (
             <MDBNavbar className="flexible-navbar" light expand="md" scrolling>
-                <MDBNavbarBrand href="/">
-                    <strong>MDB</strong>
-                </MDBNavbarBrand>
+               
                 <MDBNavbarToggler onClick = { this.onClick } />
                 <MDBCollapse isOpen = { this.state.collapse } navbar>
                     <MDBNavbarNav left>
                         <MDBNavItem active>
                             <MDBNavLink to="#">Home</MDBNavLink>
                         </MDBNavItem>
-                     
+                        <MDBNavItem active>
+                            <MDBNavLink to="/dashboard">Dashboard</MDBNavLink>
+                        </MDBNavItem>
+
                     </MDBNavbarNav>
                     <MDBNavbarNav right>
                       

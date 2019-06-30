@@ -53,7 +53,8 @@ class CreateAsset extends Component {
  
           <div className="FormTitle">
             <NavLink exact to="/" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Create Asset</NavLink>
-           </div>
+            {/* or <NavLink to="/sign-up" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign Up</NavLink> */}
+          </div>
           <div className="FormCenter">
             <form onSubmit={this.handleSubmit} className="FormFields" onSubmit={this.handleSubmit}>
               <div className="FormField">
@@ -75,7 +76,11 @@ class CreateAsset extends Component {
                 <label className="FormField__Label" htmlFor="Category">Category</label>
                 <input type="text" id="Category" className="FormField__Inputs" placeholder="Enter Category Name" name="Category" value={this.state.Category} onChange={this.handleChange} />
               </div>
-           
+              {/* 
+              <div className="FormField">
+                <label className="FormField__Label" htmlFor="hospitalid">Hospital Id</label>
+                <input type="text" id="hospitalid" className="FormField__Inputs" placeholder="Enter your Hospital Id" name="Hospital Id" value={this.state.hospitalid} onChange={this.handleChange} />
+              </div> */}
 
               <div className="FormField">
                 <button className="FormField__Button mr-20">Submit</button>

@@ -3,7 +3,7 @@ import { MDBCard, MDBCardBody, MDBTable, MDBTableBody, MDBTableHead, MDBRow, MDB
 
 const TableSection = () => {
   return (
-    <MDBRow className="mb-4">
+    <MDBRow className=" App__Bas mb-5">
           <MDBCol md="6">
               <MDBCard>
                   <MDBCardBody>

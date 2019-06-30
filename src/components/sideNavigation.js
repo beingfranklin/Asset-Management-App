@@ -23,6 +23,18 @@ const TopNavigation = () => {
                         Asset List
                     </MDBListGroupItem>
                 </NavLink>
+                 <NavLink to="/create-asset" activeClassName="activeClass">
+                    <MDBListGroupItem>
+                        <MDBIcon icon="table" className="mr-3" />
+                        Create Asset
+                    </MDBListGroupItem>
+                </NavLink>
+                <NavLink to="/create-user" activeClassName="activeClass">
+                    <MDBListGroupItem>
+                        <MDBIcon icon="table" className="mr-3" />
+                        Create User
+                    </MDBListGroupItem>
+                </NavLink>
 
                 <NavLink to="/404" activeClassName="activeClass">
                     <MDBListGroupItem>

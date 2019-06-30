@@ -27,9 +27,10 @@ class SignInForm extends Component {
     console.log('The form was submitted with the following data:');
     console.log(this.state);
     console.log(this.state.username);
-    console.log(this.state.password)
+    console.log(this.state.password);
     console.log(this.state.type);
-
+    alert("Dummy Login will redirect to Dashboard without checking");
+    window.location.href = "/dashboard";
   }
   render() {
     return (
@@ -59,7 +60,7 @@ class SignInForm extends Component {
                  <input type="radio" value="User" name="type" /> User
               </div>
               <div className="FormField">
-                <button className="FormField__Button mr-20">Sign Up</button> <Link to="/sign-up" className="FormField__Link">Not a member</Link>
+                <button className="FormField__Button mr-20">Sign In</button> <Link to="/sign-up" className="FormField__Link">Not a member</Link>
               </div>
             </form>
           </div>

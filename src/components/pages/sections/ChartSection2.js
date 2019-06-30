@@ -62,7 +62,7 @@ class ChartSection2 extends Component {
         };
 
         return (
-            <MDBRow className="mb-4">
+            <MDBRow className="App__Bas  mb-4">
                 <MDBCol md="12" lg="4" className="mb-4">
                     <MDBCard className="mb-4">
                     <MDBCardHeader>Line chart</MDBCardHeader>

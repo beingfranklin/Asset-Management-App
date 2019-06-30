@@ -24,7 +24,9 @@ class SignUpForm extends Component {
     e.preventDefault();
     console.log('The form was submitted with the following data:');
     console.log(this.state);
-    
+    alert("Dummy Sign Up will redirect to Sign In shortly");
+    window.location.href = "/sign-in";
+
   }
   render() {
     return (
