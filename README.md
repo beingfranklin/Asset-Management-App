@@ -1,6 +1,6 @@
 ## Asset Management App
 
-Built using React 🌟and Firebase 🔥.
+Built using React 🌟and ~Firebase 🔥~ .
 
 - [x] Must have a login system and the ability to create users.
       (Makes use of LocalStorage)
@@ -8,8 +8,9 @@ Built using React 🌟and Firebase 🔥.
 - [x] Assets may be associated with various Categories. 
     - [ ] Bonus points if you are able to support dynamic categorization!
 - [x] Ability to view each asset. 
-      (Table Format with Dummy data)
-- [ ] Ability to search for a particular asset. 
+      (Table Format with Dummy data with Delete)
+- [x] Ability to search for a particular asset. 
+      (Searching through Dummy data)
     - [ ] Bonus points if the search can be done based on related fields.
 - [ ] Ability to filter each asset based on fields.
 - [ ] Ability to modify and delete each asset.
