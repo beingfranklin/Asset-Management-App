@@ -14,7 +14,7 @@ Built using React 🌟and ~Firebase 🔥~ .
     - [ ] Bonus points if the search can be done based on related fields.
 - [ ] Ability to filter each asset based on fields.
 - [ ] Ability to modify and delete each asset.
-      - [x] Deletion of dummy data asset will trigger a delete function each asset.   
+    - [x] Deletion of dummy data asset will trigger a delete function each asset.   
 - [ ] Users may have specific permissions like
    - [ ] Some will have permission to do the above as well as delete or modify assets.
    - [ ] Some users can only view or create assets.
