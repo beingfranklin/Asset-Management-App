@@ -4,8 +4,8 @@ Built using React 🌟and Firebase 🔥.
 
 - [x] Must have a login system and the ability to create users.
       (Makes use of LocalStorage)
-- [ ] The system should have the ability to add new assets and their corresponding assignees.
-- [ ] Assets may be associated with various Categories. 
+- [x] The system should have the ability to add new assets and their corresponding assignees.
+- [x] Assets may be associated with various Categories. 
     - [ ] Bonus points if you are able to support dynamic categorization!
 - [ ] Ability to view each asset.
 - [ ] Ability to search for a particular asset. 

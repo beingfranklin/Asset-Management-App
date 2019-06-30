@@ -11,7 +11,8 @@ class CreateAsset extends Component {
     this.state = {
       AssetName: '',
       GivenBy: '',
-      TakenBy: ''
+      TakenBy: '',
+      Category: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -36,6 +37,8 @@ class CreateAsset extends Component {
     console.log(this.state.AssetName);
     console.log(this.state.GivenBy);
     console.log(this.state.TakenBy);
+    console.log(this.state.Category);
+
 
   }
 
@@ -64,9 +67,14 @@ class CreateAsset extends Component {
                 <input type="text" id="" className="FormField__Inputs" placeholder="Enter Issuers Name" name="GivenBy" value={this.state.GivenBy} onChange={this.handleChange} />
               </div>
 
+              
               <div className="FormField">
                 <label className="FormField__Label" htmlFor="TakenBy">Issued to</label>
                 <input type="text" id="TakenBy" className="FormField__Inputs" placeholder="Enter Name" name="TakenBy" value={this.state.TakenBy} onChange={this.handleChange} />
+              </div>
+              <div className="FormField">
+                <label className="FormField__Label" htmlFor="Category">Category</label>
+                <input type="text" id="Category" className="FormField__Inputs" placeholder="Enter Category Name" name="Category" value={this.state.Category} onChange={this.handleChange} />
               </div>
               {/* 
               <div className="FormField">
