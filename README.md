@@ -7,7 +7,8 @@ Built using React 🌟and Firebase 🔥.
 - [x] The system should have the ability to add new assets and their corresponding assignees.
 - [x] Assets may be associated with various Categories. 
     - [ ] Bonus points if you are able to support dynamic categorization!
-- [ ] Ability to view each asset.
+- [x] Ability to view each asset. 
+      (Table Format with Dummy data)
 - [ ] Ability to search for a particular asset. 
     - [ ] Bonus points if the search can be done based on related fields.
 - [ ] Ability to filter each asset based on fields.

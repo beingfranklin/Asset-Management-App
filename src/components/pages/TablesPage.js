@@ -7,9 +7,11 @@ import 'firebase/database';
 import '../../firebase';
 import TopNavigation from '../topNavigation';
 import SideNavigation from '../sideNavigation';
+import MUIDataTable from "mui-datatables";
 
 
-export default class LockTable extends Component {
+
+export default class TablesPage extends Component {
   state = { data: [] };
 
   // componentDidMount() {
@@ -37,44 +39,59 @@ export default class LockTable extends Component {
   // }
 
   componentDidMount() {
-    console.log("Inside ComponentDidMount");
-    const database = firebase.database().ref("/Assets");
-    console.log(database);
-    database.on("value", async snapshot => {
-      const data = [];
-      console.log(data);
-      await snapshot.forEach(childSnapShot => {
-        const asset = {
-          Asset: childSnapShot.key.toString(),
-          GivenBy: childSnapShot.val().GivenBy,
-          TakenBy: childSnapShot.val().TakenBy
-        };
+    // console.log("Inside ComponentDidMount");
+    // const database = firebase.database().ref("/Assets");
+    // console.log(database);
+    // database.on("value", async snapshot => {
+    //   const data = [];
+    //   console.log(data);
+    //   await snapshot.forEach(childSnapShot => {
+    //     const asset = {
+    //       Asset: childSnapShot.key.toString(),
+    //       GivenBy: childSnapShot.val().GivenBy,
+    //       TakenBy: childSnapShot.val().TakenBy
+    //     };
 
-        data.push(asset);
-      });
+    //     data.push(asset);
+    //   });
 
-      this.setState({ data: [...this.state.data, ...data] });
-      console.log(data);
-    });
+    //   this.setState({ data: [...this.state.data, ...data] });
+    //   console.log(data);
+    // });
 
   }
 
   render() {
-    const columns = [
-      {
-        Header: "Asset Item",
-        accessor: "Asset"
-      },
-      {
-        Header: "Given By",
-        accessor: "GivenBy"
-      },
-      {
-        Header: "Taken By",
-        accessor: "TakenBy"
-      },
 
+    // Dummy data
+    const columns = ["Asset Name", "Given By", "Issued By"];
+
+    const data = [
+      ["Jesse Welch", "Agency Legal Counsel", "Seattle"],
+      ["Eli Mejia", "Commercial Specialist", "Long Beach"],
+      ["Gene Leblanc", "Industrial Analyst", "Hartford"],
+      ["Jesse Welch", "Agency Legal Counsel", "Seattle"],
+      ["Eli Mejia", "Commercial Specialist", "Long Beach"],
+      ["Gene Leblanc", "Industrial Analyst", "Hartford"],
+      ["Jesse Welch", "Agency Legal Counsel", "Seattle"],
+      ["Eli Mejia", "Commercial Specialist", "Long Beach"],
+      ["Gene Leblanc", "Industrial Analyst", "Hartford"],
+      ["Jesse Welch", "Agency Legal Counsel", "Seattle"],
+      ["Eli Mejia", "Commercial Specialist", "Long Beach"],
+      ["Gene Leblanc", "Industrial Analyst", "Hartford"],
+      ["Jesse Welch", "Agency Legal Counsel", "Seattle"],
+      ["Eli Mejia", "Commercial Specialist", "Long Beach"],
+      ["Gene Leblanc", "Industrial Analyst", "Hartford"]
     ];
+
+    const options = {
+      filterType: "dropdown",
+      responsive: "scroll",
+      onRowsDelete : ()=>(
+        console.log("Dummy Delete Function triggers")
+      )
+    };
+
 
     return (
       <div>
@@ -82,9 +99,22 @@ export default class LockTable extends Component {
         <TopNavigation />
         <SideNavigation />
         <main id="content" className="p-5">
-          <ReactTable data={this.state.data} columns={columns} />
+          {/* <ReactTable data={this.state.data} columns={columns} /> */}
+          <MUIDataTable
+        title={"Asset List"}
+        data={data}
+        columns={columns}
+        options={options}
+      />
         </main>
       </div>
     );
   }
 }
+
+
+
+
+
+
+
