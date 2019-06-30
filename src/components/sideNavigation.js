@@ -16,24 +16,14 @@ const TopNavigation = () => {
                         Dashboard
                     </MDBListGroupItem>
                 </NavLink>
-                <NavLink to="/profile" activeClassName="activeClass">
-                    <MDBListGroupItem>
-                        <MDBIcon icon="user" className="mr-3" />
-                        Profile
-                    </MDBListGroupItem>
-                </NavLink>
+
                 <NavLink to="/tables" activeClassName="activeClass">
                     <MDBListGroupItem>
                         <MDBIcon icon="table" className="mr-3" />
                         Asset List
                     </MDBListGroupItem>
                 </NavLink>
-                {/* <NavLink to="/maps" activeClassName="activeClass">
-                    <MDBListGroupItem>
-                        <MDBIcon icon="map" className="mr-3"/>
-                        Maps
-                    </MDBListGroupItem>
-                </NavLink> */}
+
                 <NavLink to="/404" activeClassName="activeClass">
                     <MDBListGroupItem>
                         <MDBIcon icon="exclamation" className="mr-3" />

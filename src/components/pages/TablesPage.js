@@ -2,24 +2,48 @@ import React, { Component } from 'react';
 import ReactTable from "react-table";
 import "react-table/react-table.css";
 import firebase from 'firebase/app';
-import 'firebase/auth';
+// import 'firebase/auth';
 import 'firebase/database';
 import '../../firebase'
-
-
 
 
 export default class LockTable extends Component {
   state = { data: [] };
 
-  componentDidMount() {
-    const database = firebase.database().ref("/");
-    database.on("value", snapshot => {
-      const data = [];
+  // componentDidMount() {
+  //   console.log("Inside ComponentDidMount");
+  //   const database = firebase.database().ref("/Assets");
+  //   console.log(database);
+  //   database.on("value", snapshot => {
+  //     console.log(snapshot);
+  //     const data = [];
 
-      snapshot.forEach(childSnapShot => {
+  //     snapshot.forEach(childSnapShot => {
+  //       const asset = {
+  //         AssetNumber: childSnapShot.key.toString(),
+  //         GivenBy: childSnapShot.val().GivenBy,
+  //         TakenBy: childSnapShot.val().TakenBy
+  //       };
+  //       console.log(asset);
+  //       data.push(asset);
+  //     });
+
+  //     this.setState(prevState => {
+  //       return { data: [...prevState.data, ...data] };
+  //     });
+  //   });
+  // }
+
+  componentDidMount() {
+    console.log("Inside ComponentDidMount");
+    const database = firebase.database().ref("/Assets");
+    console.log(database);
+    database.on("value", async snapshot => {
+      const data = [];
+      console.log(data);
+      await snapshot.forEach(childSnapShot => {
         const asset = {
-          AssetNumber: childSnapShot.key.toString(),
+          Asset: childSnapShot.key.toString(),
           GivenBy: childSnapShot.val().GivenBy,
           TakenBy: childSnapShot.val().TakenBy
         };
@@ -27,17 +51,17 @@ export default class LockTable extends Component {
         data.push(asset);
       });
 
-      this.setState(prevState => {
-        return { data: [...prevState.data, ...data] };
-      });
+      this.setState({ data: [...this.state.data, ...data] });
+      console.log(data);
     });
+
   }
 
   render() {
     const columns = [
       {
-        Header: "Asset Number",
-        accessor: "AssetNumber"
+        Header: "Asset Item",
+        accessor: "Asset"
       },
       {
         Header: "Given By",
